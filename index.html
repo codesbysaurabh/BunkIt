@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BunkIt — skip budget calculator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="wordmark">Bunk<span>It</span></div>
+    <div class="term-meta">GL Bajaj · odd semester 2026<br>20 Jul – 27 Dec</div>
+  </header>
+  <p class="subhead">Enter where your attendance stands and the tool works out how many of your remaining lectures you can miss without dropping below target.</p>
+
+  <div class="layout">
+
+    <div class="panel">
+
+      <div class="two-col">
+        <div class="field">
+          <label class="field-label" for="attended">Classes attended</label>
+          <input type="number" id="attended" min="0" step="1" placeholder="e.g. 92" />
+        </div>
+        <div class="field">
+          <label class="field-label" for="held">Classes held so far</label>
+          <input type="number" id="held" min="0" step="1" placeholder="e.g. 110" />
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="field">
+          <label class="field-label" for="target">Target attendance %</label>
+          <input type="number" id="target" min="1" max="100" step="1" placeholder="e.g. 75" />
+        </div>
+        <div class="field">
+          <label class="field-label" for="targetDate">Maintain it until</label>
+          <input type="date" id="targetDate" min="2026-07-20" max="2026-12-27" />
+          <div class="field-hint">Data covers 20 Jul – 27 Dec 2026</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="timetable-label">Weekly timetable — lectures per day</div>
+        <div class="day-row">
+          <div class="day-field"><label>Mon</label><input type="number" min="0" step="1" data-day="1" placeholder="0" /></div>
+          <div class="day-field"><label>Tue</label><input type="number" min="0" step="1" data-day="2" placeholder="0" /></div>
+          <div class="day-field"><label>Wed</label><input type="number" min="0" step="1" data-day="3" placeholder="0" /></div>
+          <div class="day-field"><label>Thu</label><input type="number" min="0" step="1" data-day="4" placeholder="0" /></div>
+          <div class="day-field"><label>Fri</label><input type="number" min="0" step="1" data-day="5" placeholder="0" /></div>
+        </div>
+        <div class="field-hint">Saturdays and Sundays are off all semester, so they're not counted.</div>
+      </div>
+
+      <div class="error-line" id="errorLine"></div>
+
+      <button class="calc" id="calcBtn">Calculate my skip budget</button>
+    </div>
+
+    <div class="ticket-shell">
+      <div class="ticket placeholder" id="ticket">
+        Fill in the form and your pass shows up here.
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    Assumes your weekly timetable stays the same all the way to your target date, and that days off in your college's official calendar (weekends, Diwali, ST-1, PUT, end-semester exams, and other declared holidays) are the only lecture-free days. If your actual schedule shifts mid-term, re-run the numbers.
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
