@@ -9,8 +9,8 @@
   for(let d=new Date(Date.UTC(2026,10,24)),e=Date.UTC(2026,11,27);d<=e;d.setUTCDate(d.getUTCDate()+1)) offDates.add(iso(d));
   const CAL_START=new Date(Date.UTC(2026,6,20)), CAL_END=new Date(Date.UTC(2026,11,27));
   const DAYS=['Mon','Tue','Wed','Thu','Fri'], FULL=['Monday','Tuesday','Wednesday','Thursday','Friday'];
-  const DEMO={mon:4,tue:5,wed:4,thu:5,fri:3};
-  const counts={1:4,2:5,3:4,4:5,5:3};
+  const DEMO={mon:7,tue:7,wed:6,thu:8,fri:8};
+  const counts={1:7,2:7,3:6,4:8,5:8};
   const $=id=>document.getElementById(id);
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   const today=()=>{const n=new Date();return new Date(Date.UTC(n.getFullYear(),n.getMonth(),n.getDate()));};
