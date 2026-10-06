@@ -136,7 +136,7 @@
 
   ['attended','held','targetDate','todayCounted'].forEach(id=>$(id).addEventListener('input',calc));
   $('target').addEventListener('input',()=>{markChip();calc();});
-  $('calcBtn').onclick=()=>{if(calc()){burst();toast('⚡ Skip budget recalculated live!');}};
+  $('calcBtn').onclick=()=>{if(calc()){burst();toast('⚡ Skip budget recalculated live!');if(matchMedia('(max-width:900px)').matches)$('pass').scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});}};
 
   $('resetBtn').onclick=()=>{
     $('attended').value=92;$('held').value=110;$('target').value=75;$('targetDate').value='2026-11-20';$('todayCounted').checked=false;
